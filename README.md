@@ -10,7 +10,7 @@
 <a href="https://play.google.com/store/apps/details?id=com.bennyv17.river">
     <img alt="Get it on Google Play" height="80" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
 </a>
-</div></br>
+</div>
 
 ## About
 River is the first third-party IDE for the RiveScript on Android, providing a syntax highlighted editor, and bundled with the Java version of the RiveScript interpreter, and let you test out your script instantly. Also with interactive tutorials, and templates.
