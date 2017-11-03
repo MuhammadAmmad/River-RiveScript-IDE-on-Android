@@ -25,7 +25,7 @@ What is RiveScript? RiveScript is a simple scripting language for chatbots with 
 
 For details, please Google it.
 
-## Kotlin
+## Written in Kotlin
 
     fun kotlinIsFun()
     {
