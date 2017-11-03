@@ -16,5 +16,11 @@ The app is licensed GNU General Public License v3.0
 ## Project team
 [bennykok](https://github.com/BennyKok)
 
+## Donation  
+You can support me and buy me some coffee. 
+
+[Paypal](https://www.paypal.me/BennyKok) or
+<noscript><a href="https://liberapay.com/BennyKok/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript> 
+
 ## Screenshots
 <img src="/artworks/overview_image.png" align="left">
