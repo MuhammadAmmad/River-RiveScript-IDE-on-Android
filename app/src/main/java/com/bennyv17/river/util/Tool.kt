@@ -76,7 +76,7 @@ object Tool {
 
     @ColorInt
     fun getThemeColor(context: Context,
-            @AttrRes attributeColor: Int): Int {
+                      @AttrRes attributeColor: Int): Int {
         val value = TypedValue()
         context.theme.resolveAttribute(attributeColor, value, true)
         return value.data
@@ -87,13 +87,15 @@ object Tool {
 
         val result = arrayListOf<File>()
 
-        result += parentFolder.listFiles(FilenameFilter { _, name ->
+        val files = parentFolder.listFiles(FilenameFilter { _, name ->
 
             if (name.endsWith(extension))
                 return@FilenameFilter true
 
             false
         })
+        if (files != null)
+            result += files
 
         return result
     }

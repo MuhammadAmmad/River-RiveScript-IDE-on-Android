@@ -15,6 +15,7 @@ import android.support.v4.content.res.ResourcesCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.Menu
@@ -581,7 +582,6 @@ class MainActivity : AssentActivity()
         return when (item.itemId) {
             R.id.action_run -> {
                 runScript()
-
                 true
             }
             R.id.action_theme -> {
@@ -659,8 +659,7 @@ class MainActivity : AssentActivity()
                 true
             }
             R.id.action_style -> {
-                val popupWindow = PopupWindow(this)
-                popupWindow.contentView = layoutInflater.inflate(R.layout.popup_text_size, null)
+                val popupWindow = PopupWindow(layoutInflater.inflate(R.layout.popup_text_size, null),300,300)
                 popupWindow.isOutsideTouchable = true
                 popupWindow.isFocusable = true
                 popupWindow.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
@@ -704,10 +703,11 @@ class MainActivity : AssentActivity()
                 }
 
                 val menu_item = findViewById<View>(R.id.action_style)
-                if (menu_item == null)
+                if (menu_item == null) {
                     popupWindow.showAtLocation(toolbar, Gravity.END or Gravity.TOP, 0, 0)
-                else
+                } else {
                     popupWindow.showAsDropDown(menu_item)
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)
