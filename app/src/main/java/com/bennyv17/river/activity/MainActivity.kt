@@ -226,9 +226,7 @@ class MainActivity : AssentActivity()
         editorTextSize = pref!!.getInt(pref_id_editor_text_size, editorTextSize)
         dirPath = pref!!.getString(pref_id_project_dir, PROJECT_DIR)
 
-        //TODO()
         unlocked = pref!!.getBoolean(pref_id_unlocked, false)
-        unlocked = true
         darkTheme = pref!!.getBoolean(pref_id_dark_theme, false) and unlocked
 
         if (darkTheme) {
@@ -240,8 +238,6 @@ class MainActivity : AssentActivity()
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        //supportActionBar!!.setDisplayShowTitleEnabled(false)
-
         toolbar.subtitle = UNTITLED
 
         initEditor()
@@ -249,11 +245,10 @@ class MainActivity : AssentActivity()
 
         initSymbolToolBar()
         initDrawer(savedInstanceState)
-        checkPermissions()
-
-        getAllScripts()
-        resumeLastSession()
-
+        if (checkPermissions(true)) {
+            getAllScripts()
+            resumeLastSession()
+        }
         fab.setOnClickListener {
             rightDrawer.openDrawer()
         }
@@ -280,8 +275,8 @@ class MainActivity : AssentActivity()
         bp = BillingProcessor.newBillingProcessor(this, PrivateData.licenceKey, this)
         bp.initialize()
 
-        if (pref!!.getString("previousVision", "") != BuildConfig.VERSION_NAME) {
-            pref!!.edit().putString("previousVision", BuildConfig.VERSION_NAME).apply()
+        if (checkPermissions(false) && pref!!.getString("previousVersion", "") != BuildConfig.VERSION_NAME) {
+            pref!!.edit().putString("previousVersion", BuildConfig.VERSION_NAME).apply()
             showChangelog()
         }
 
@@ -464,16 +459,23 @@ class MainActivity : AssentActivity()
         }
     }
 
-    private fun checkPermissions() {
-        if (!Assent.isPermissionGranted(Assent.READ_EXTERNAL_STORAGE) || !Assent.isPermissionGranted(Assent.WRITE_EXTERNAL_STORAGE)) {
-            Assent.requestPermissions(AssentCallback { result ->
-                if (!result.allPermissionsGranted()) {
-                    permissionsDenied = true
-                    Toast.makeText(this, "River will not be able to work without those permission", Toast.LENGTH_SHORT).show()
-                    finish()
-                }
-
-            }, 69, Assent.READ_EXTERNAL_STORAGE, Assent.WRITE_EXTERNAL_STORAGE)
+    private fun checkPermissions(request: Boolean): Boolean {
+        return if (!Assent.isPermissionGranted(Assent.READ_EXTERNAL_STORAGE) || !Assent.isPermissionGranted(Assent.WRITE_EXTERNAL_STORAGE)) {
+            if (request)
+                Assent.requestPermissions(AssentCallback { result ->
+                    if (!result.allPermissionsGranted()) {
+                        permissionsDenied = true
+                        Toast.makeText(this, "River will not be able to work without those permission", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        getAllScripts()
+                        resumeLastSession()
+                        showChangelog()
+                    }
+                }, 69, Assent.READ_EXTERNAL_STORAGE, Assent.WRITE_EXTERNAL_STORAGE)
+            false
+        } else {
+            true
         }
     }
 
@@ -801,7 +803,8 @@ class MainActivity : AssentActivity()
     override fun onResume() {
         super.onResume()
 
-        getAllScripts()
+        if (checkPermissions(false))
+            getAllScripts()
     }
 
     override fun onBackPressed() {
