@@ -1,3 +1,5 @@
+<img src="/artworks/overview_big_image.png" align="center">
+
 # River
 
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
@@ -23,4 +25,4 @@ You can support me and buy me some coffee.
 <noscript><a href="https://liberapay.com/BennyKok/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript> 
 
 ## Screenshots
-<img src="/artworks/overview_image.png" align="left">
+<img src="/artworks/overview_image.png" align="center">
