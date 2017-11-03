@@ -1,8 +1,13 @@
 # River
 
 <img src="/app/src/main/ic_launcher-web.png" align="left" width="100" hspace="10" vspace="10">
-<div style="display:flex;">
+
 <b>River</b> is an IDE for <a href="https://www.rivescript.com">RiveScript</a> on Android, created from scratch. Using the Java version of RiveScript interpreter. Written in Kotlin.
+
+<div style="display:flex;" >
+<a href="https://play.google.com/store/apps/details?id=com.bennyv17.river">
+    <img alt="Get it on Google Play" height="80" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" />
+</a>
 </div></br>
 
 ## License
