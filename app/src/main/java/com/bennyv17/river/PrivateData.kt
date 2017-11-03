@@ -1,0 +1,6 @@
+package com.bennyv17.river
+
+object PrivateData {
+    val licenceKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvIxynCRopzy0VZREv8B73LISP9xV3FPOXFX/tXTsfd5i5uDXx782HLHBguaTxY2IhHPp4yAzCTFKHqICHzNuQJyd/p4WZUHSTNaxCVW+r6DcELssmI2nXG8N5pLwhgMcXLQ5yOAa1MDe0a82H6e55o/tER6M/qkm7i4stHtxy9vG4uTWOUYmNdw31uCRjylyTvuGbwuVug/eO1hsnkXlUO1/sFJ819Kqt3zXH0sGTOUcHVDdZB1IoF3XsWqnwAcVxxhCrSmovc/A567d7knjMD7KdC951K67JY7TvoUNIWzoqYpdWy59hzk7j9m3f0NM1itb/AZvlAij7w13hicsZwIDAQAB"
+    val sku1 = "river_extras"
+}
