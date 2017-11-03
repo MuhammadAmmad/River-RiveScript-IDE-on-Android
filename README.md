@@ -12,6 +12,27 @@
 </a>
 </div></br>
 
+## About
+River is the first third-party IDE for the RiveScript on Android, providing a syntax highlighted editor, and bundled with the Java version of the RiveScript interpreter, and let you test out your script instantly. Also with interactive tutorials, and templates.
+
+<b>Features</b>
+
+Syntax highlighted editor | Built-in playground | Fonts | Templates | Undo | Redo | Full In-app step by step tutorials(Locked Extras) | Dark theme(Locked Extras)
+
+<b>RiveScirpt</b>
+
+What is RiveScript? RiveScript is a simple scripting language for chatbots with a friendly, easy to learn syntax.
+
+For details, please Google it.
+
+## Kotlin
+
+    fun kotlinIsFun()
+    {
+        print("100% open source")
+    }
+    //Written in Kotlin, fun to code, fun to play.
+
 ## License
 The app is licensed GNU General Public License v3.0
 
